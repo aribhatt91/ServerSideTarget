@@ -3,7 +3,15 @@ var http = require("http");
 const express = require("express");
 const app = express();
 
+const logger = (req, res, next) => {
+  req.timeReceived = new Date();
+  next();
+};
+
+app.use(logger);
+
 app.get("/", function (req, res) {
+  console.log(`Request received at ${req.timeReceived}`);
   res.write("Hello World!");
   res.send();
 });
@@ -11,6 +19,7 @@ app.get("/", function (req, res) {
 const server = app.listen(8080, function () {
   console.log("Express listening to port 8080");
 });
+
 /*
 //create a server object:
 http
