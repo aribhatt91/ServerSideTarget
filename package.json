@@ -6,7 +6,12 @@
   "scripts": {
     "start": "nodemon src/index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@adobe/target-decisioning-engine": "1.7.1",
+    "@adobe/target-nodejs-sdk": "2.2.1",
+    "dotenv": "10.0.0",
+    "express": "4.17.1"
+  },
   "devDependencies": {
     "nodemon": "1.18.4"
   },
